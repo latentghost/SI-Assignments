@@ -20,6 +20,7 @@ alpha <- 0.05
 t_stat <- (xbar - mu_null) / (std / sqrt(n))
 
 # Calculate the quantile corresponding to significane level alpha
+# H1 corresponds to a rejection region on both sides of the critical values
 quant <- -c(qt(1 - (alpha / 2), n - 1), qt(alpha / 2, n - 1))
 
 cat("\nCritical Values:", quant, "\n")
