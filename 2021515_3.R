@@ -23,7 +23,7 @@ t_stat <- (xbar - mu_null) / (std / sqrt(n))
 # H1 corresponds to a rejection region on both sides of the critical values
 quant <- -c(qt(1 - (alpha / 2), n - 1), qt(alpha / 2, n - 1))
 
-cat("\nCritical Values:", quant, "\n")
+cat("\nCritical Values:", quant[1], "and", quant[2], "\n")
 
 # H0 is rejected if the test statistic falls outside the region between the critical values
 if (t_stat < quant[1] || t_stat > quant[2]) {
