@@ -10,11 +10,11 @@ mu_null <- 15
 alpha <- 0.05
 
 # Define test statistic as the t-stat for normal distribution
-test_stat <- (xbar - mu_null) / (std / sqrt(n))
+t_stat <- (xbar - mu_null) / (std / sqrt(n))
 
 # Calculate the p-value corresponding to the test statistic
 # Since H1 corresponds to the right side, upper tail value is used
-p_value <- pnorm(test_stat, mean = 0, sd = 1, lower.tail = FALSE)
+p_value <- pt(q = t_stat, df = n - 1, lower.tail = FALSE)
 
 cat("\np-value:", p_value, "\n")
 
