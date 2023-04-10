@@ -14,10 +14,11 @@ std2 <- 1.0
 # Define null value as 0 (since H0 is same as mu1 - mu2 = 0)
 mu_null <- 0
 
-#Define test statistic as the t-stat
+# Define test statistic as the t-stat
 t_stat <- ((mu1 - mu2) - mu.null) / sqrt(((std1^2) / n1) + ((std2^2) / n2))
 
-
+# Calculate the quantile corresponding to significance level alpha
+quant <- qt()
 
 # Calculate the p-value corresponding to the test statistic
 # Since H1 corresponds to both sides of H0, the rejection region
