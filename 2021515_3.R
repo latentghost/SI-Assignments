@@ -26,9 +26,9 @@ cat("\nCritical Values:", quant, "\n")
 
 # H0 is rejected if the test statistic falls outside the region between the critical values
 if (t_stat < quant[1] || t_stat > quant[2]) {
-    cat("H\u2080 is rejected i.e. the yield is not 12.0 quintals per hectare.", "\n")
+    cat("H\u2080 is rejected i.e. the yield is not likely to be 12.0 quintals per hectare.", "\n")
 } else {
-    cat("H\u2080 is accepted i.e. the yield is 12.0 quintals per hectare.", "\n")
+    cat("H\u2080 is accepted i.e. the yield is likely to be 12.0 quintals per hectare.", "\n")
 }
 cat("\n")
 
@@ -39,8 +39,8 @@ p_value <- pt(q = t_stat, df = n - 1, lower.tail = TRUE)
 cat("p-value:", p_value, "\n")
 
 if (p_value > alpha) {
-    cat("H\u2080 is accepted i.e. the yield is 12.0 quintals per hectare.", "\n")
+    cat("H\u2080 is accepted i.e. the yield is likely to be 12.0 quintals per hectare.", "\n")
 } else {
-    cat("H\u2080 is rejected i.e. the yield is not 12.0 quintals per hectare.", "\n")
+    cat("H\u2080 is rejected i.e. the yield is not likely to be 12.0 quintals per hectare.", "\n")
 }
 cat("\n")
