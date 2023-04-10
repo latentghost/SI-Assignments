@@ -21,10 +21,8 @@ p_value <- pt(q = t_stat, df = n - 1, lower.tail = TRUE)
 cat("\np-value:", p_value, "\n")
 
 if (p_value > alpha) {
-    cat("H\u2080 is accepted i.e. the population mean time on death row
-could likely be 15 years.", "\n")
+    cat("H\u2080 is accepted i.e. the population mean time on death row could likely be 15 years.", "\n")
 } else {
-    cat("H\u2080 is rejected i.e. the population mean time on death row
-could is not 15 years.", "\n")
+    cat("H\u2080 is rejected i.e. the population mean time on death row could is not 15 years.", "\n")
 }
 cat("\n")
