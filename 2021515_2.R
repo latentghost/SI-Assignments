@@ -17,12 +17,12 @@ t_stat <- (xbar - mu_null) / (std / sqrt(n))
 
 # Calculate the quantile corresponding to significane level alpha
 # H1 corresponds to a rejection region on right side of the critical value
-quant <- qt(1 - alpha, df = n - 1, lower.tail = FALSE)
+quant <- -c(qt(1 - alpha / 2, df = n - 1, lower.tail = FALSE), qt(alpha / 2, df = n -1, lower.tail = FALSE))
 
-cat("\nCritical Value:", quant, "\n")
+cat("\nCritical Values:", quant[1], "and", quant[2], "\n")
 
 # H0 is rejected if the test statistic falls outside the region between the critical values
-if (t_stat > quant) {
+if (t_stat < quant[1] || t_stat > quant[2]) {
     cat("H\u2080 is rejected i.e. the population mean time on death row could likely be >15 years.", "\n")
 } else {
     cat("H\u2080 is accepted i.e. the population mean time on death row could likely be 15 years.", "\n")
